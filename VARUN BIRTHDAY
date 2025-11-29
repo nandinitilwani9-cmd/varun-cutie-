@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Varun 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f8e9ff, #ffeef4);
+      overflow-x: hidden;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 3rem;
+      color: #ff4f8b;
+    }
+
+    .message {
+      font-size: 1.3rem;
+      margin: 20px auto;
+      width: 80%;
+      color: #444;
+    }
+
+    .slideshow {
+      width: 85%;
+      height: 300px;
+      margin: 30px auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .slideshow img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: fade 5s infinite;
+    }
+
+    @keyframes fade {
+      0% { opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .note {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      padding: 20px;
+      width: 85%;
+      color: #333;
+      background: #ffffffaa;
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      color: #ff7aa2;
+      font-size: 20px;
+      animation: floatUp 5s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-700px) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎈 Happy Birthday Varun (Kukkad)! 🎉</h1>
+
+  <p class="message">
+    Wishing you the cutest, happiest and most beautiful birthday! 💖<br>
+    You deserve all the smiles, softness and joy today.
+  </p>
+
+  <!-- Slideshow -->
+  <div class="slideshow">
+    <img id="slide" src="photo1.jpg" alt="photo">
+  </div>
+
+  <!-- Personal Note -->
+  <div class="note">
+    🌸 You are truly special, Varun. This little page is just a cute reminder
+    of how wonderful you are. I hope this brings a smile to your face today. 🌸
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bgm" src="music.mp3" autoplay loop></audio>
+
+  <script>
+    // Photo slideshow
+    const photos = ["photo1.jpg", "photo2.jpg", "photo3.jpg"]; // Replace with your photos
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % photos.length;
+      document.getElementById("slide").src = photos[index];
+    }, 5000);
+
+    // Floating hearts
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+    setInterval(createHeart, 400);
+  </script>
+
+</body>
+</html>
